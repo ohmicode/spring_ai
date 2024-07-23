@@ -21,6 +21,9 @@ public class Gpt4allConfig {
 
     @Bean
     public LLModel.GenerationConfig gpt4allGenerationConfig() {
-        return LLModel.config().withNPredict(4096).build();
+        return LLModel.config()
+//            .withNPredict(4096)
+            .withTemp(0.88f)
+            .build();
     }
 }
