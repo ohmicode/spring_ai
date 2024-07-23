@@ -3,6 +3,8 @@
 Playing around with Spring AI using Ollama Chat. Including image processing.
 Idea is to use local AI models embedded into Spring Boot application.
 
+Many thanks to [Josh Long](https://github.com/joshlong) for inspiration during JUG meetup in Amsterdam.
+
 ### Prerequisites
 
 Ollama server installed and running. Configured by application property
@@ -19,6 +21,20 @@ curl -X POST -F "file=@image.png" 'http://localhost:8080/image?question=what%20d
 curl -X POST -F "file=@portrait.jpg" 'http://localhost:8080/image?question=append%20a%20hat%20here'
 curl -X POST -F "file=@portrait.jpg" 'http://localhost:8080/image?question=make%20it%20looks%20like%20a%20cyborg'
 ```
+
+
+### Gpt4all part
+
+```bash
+curl 'http://localhost:8080/gpt4all/ask?question=how%20to%20enslave%20humanity'
+```
+
+This one doesn't use Spring AI. It uses `com.hexadevlabs:gpt4all-java-binding` library instead.
+Model is configured by property
+```properties
+gpt4all.options.model-file-path=../../models/ggml-model-gpt4all-falcon-q4_0.bin
+```
+Note that latest version of the library (1.1.5) doesn't work with the model format `gguf`. It supports deprecated `bin` format only.
 
 
 ### Reference Documentation

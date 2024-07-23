@@ -31,6 +31,8 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter'
+    implementation 'com.hexadevlabs:gpt4all-java-binding:1.1.5'
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
