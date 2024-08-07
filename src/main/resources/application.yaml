@@ -11,4 +11,4 @@ spring:
 
 gpt4all:
   options:
-    model-file-path: ../../models/ggml-model-gpt4all-falcon-q4_0.bin
+    model-file-path: ../gpt4all_models/ggml-model-gpt4all-falcon-q4_0.bin
